@@ -9,7 +9,9 @@ import ColorList from './ColorList'
 import ShoppingList from './ShoppingList'
 import Clicker from './Clicker'
 import Form from './Form'
-import Counter from './Counter' 
+import Counter from './Counter'
+import Toggler from './Toggler' 
+import ToggleCounter from './ToggleCounter'
 
 // const data = [
 //   {id: 1 , item: "Apples", quantity: 12, completed: false},
@@ -19,10 +21,14 @@ import Counter from './Counter'
 // ];
 
 function App() {
-    return (
+     return (
         <div>
 
-          <Counter />
+          <ToggleCounter />
+
+          {/* <Toggler /> */}
+
+          {/* <Counter /> */}
           
           {/* <Clicker message="HI!!!" buttonText="Please Click Me"/>
           <Clicker message="Please Stop Clicking Me" buttonText="do not click"/> */}
