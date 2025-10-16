@@ -24,7 +24,9 @@ function App() {
      return (
         <div>
 
-          <ToggleCounter />
+          <Counter />
+
+          {/* <ToggleCounter /> */}
 
           {/* <Toggler /> */}
 
