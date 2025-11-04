@@ -1,0 +1,257 @@
+/* Import Google Font for a modern look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
+
+/* Global Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: #111827;
+  /* Dark background */
+}
+
+.app-container {
+  padding: 16px;
+  /* p-4 */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+/* Card and Layout */
+.score-card {
+  width: 100%;
+  max-width: 640px;
+  /* max-w-2xl */
+  background-color: #1f2937;
+  /* gray-800 */
+  border-radius: 1rem;
+  /* rounded-2xl */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  /* shadow-2xl */
+  padding: 40px;
+  /* p-10 */
+  margin-top: 32px;
+  margin-bottom: 32px;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    padding: 32px;
+    /* md:p-8 */
+  }
+}
+
+/* Title Styling */
+.title {
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 8px;
+  /* Gradient Text Effect */
+  background-image: linear-gradient(to right, #a855f7, #ec4899);
+  /* from-purple-400 to-pink-600 */
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.subtitle {
+  color: #9ca3af;
+  /* gray-400 */
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.target-score {
+  font-weight: bold;
+  color: #f472b6;
+  /* pink-300 */
+}
+
+/* Player List & Item */
+.player-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* space-y-4 */
+  max-height: 60vh;
+  overflow-y: auto;
+  list-style: none;
+  /* Remove default list style */
+  padding: 0;
+}
+
+/* Hide scrollbar */
+.player-list::-webkit-scrollbar {
+  display: none;
+}
+
+.player-list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.player-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #374151;
+  /* gray-700 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.player-item:hover {
+  background-color: #4b5563;
+  /* hover:bg-gray-600/70 */
+}
+
+/* Winner Styling */
+.player-item.winner {
+  background-color: rgba(251, 191, 36, 0.1);
+  /* yellow-600/20 */
+  box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.5);
+  /* ring-4 ring-yellow-400/50 */
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 12px;
+  background-color: #ec4899;
+  /* pink-500 */
+}
+
+.player-item.winner .indicator {
+  background-color: #fcd34d;
+  /* yellow-400 */
+  animation: pulse 1.5s infinite;
+}
+
+.player-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e5e7eb;
+  /* gray-200 */
+}
+
+.score-value {
+  margin-left: 12px;
+  font-size: 24px;
+  font-weight: 800;
+  color: #a855f7;
+  /* purple-400 */
+}
+
+.score-value.winner-score {
+  color: #fcd34d;
+  /* yellow-300 */
+}
+
+/* Winner Badge */
+.winner-badge {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fcd34d;
+  /* yellow-300 */
+  background-color: #4c2800;
+  /* yellow-900 */
+  padding: 4px 12px;
+  border-radius: 9999px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border: 1px solid #fcd34d;
+  /* border-yellow-500 */
+}
+
+/* +1 Button */
+.score-button {
+  width: 56px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.2s ease;
+  color: white;
+  background-color: #ec4899;
+  /* pink-600 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.score-button:hover:not(:disabled) {
+  background-color: #f472b6;
+  /* hover:bg-pink-500 */
+  transform: scale(1.05);
+}
+
+.score-button:active:not(:disabled) {
+  background-color: #be185d;
+  /* active:bg-pink-700 */
+  transform: scale(0.95);
+}
+
+.score-button:disabled {
+  background-color: #6b7280;
+  /* gray-500 */
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Reset Button */
+.reset-button-container {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.reset-button {
+  width: 100%;
+  max-width: 320px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background-color: #9333ea;
+  /* purple-600 */
+  border-radius: 9999px;
+  border: none;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.reset-button:hover:not(:disabled) {
+  background-color: #a855f7;
+  /* hover:bg-purple-500 */
+  transform: scale(1.02);
+}
+
+.reset-button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.reset-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* CSS Animation */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
