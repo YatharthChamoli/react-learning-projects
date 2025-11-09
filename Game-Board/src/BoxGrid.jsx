@@ -33,7 +33,7 @@ const toggleBox = (idx) => {
   return (
     <div className="BoxGrid">
       {boxes.map( (b, idx) => (
-        <Box isActive={b} toggle = { () => toggleBox(idx)}/>
+        <Box key={idx} isActive={b} toggle = { () => toggleBox(idx)}/>
       ))}
       <button onClick={reset}>Reset</button>
     </div>
