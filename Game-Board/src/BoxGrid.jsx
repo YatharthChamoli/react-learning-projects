@@ -2,17 +2,7 @@ import Box from './Box.jsx';
 import { useState } from 'react';
 
 function BoxGrid() {
-  const [boxes, setBoxes] = useState([
-    false, 
-    false, 
-    false, 
-    true, 
-    false, 
-    false, 
-    false, 
-    false, 
-    false
-  ]);
+  const [boxes, setBoxes] = useState([ false, false, false, true, false, false, false, false, false]);
   const reset = () => {
     setBoxes([ false, false, false, false, false, false, false, false, false])
 };
